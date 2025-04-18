@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="#" id="homeBtn">🏠 Home</a></li>
+            <li><a href="#" id="accountBtn">👤 My Account</a></li>
+            <li><a href="#">⚙ Settings</a></li>
+            <li><a href="#">🚪 Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <!-- الصفحة الرئيسية -->
+        <div id="homeSection">
+            <h2>Welcome, User!</h2>
+            <div class="stats">
+                <div class="stat-box">👤 Users Count: <strong>1500</strong></div>
+                <div class="stat-box">📅 New Subscriptions: <strong>120</strong></div>
+                <div class="stat-box">💬 Messages: <strong>45</strong></div>
+            </div>
+        </div>
+
+        <!-- صفحة إدارة الحساب -->
+        <div id="accountSection" style="display: none;">
+            <h2>My Account</h2>
+            <form id="accountForm">
+                <label>Full Name:</label>
+                <input type="text" id="fullName" value="User Name">
+                
+                <label>Email:</label>
+                <input type="email" id="email" value="user@example.com">
+                
+                <label>Password:</label>
+                <input type="password" id="password" value="123456">
+                
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <link:html src="login.html"></link:html>
+ <link:html src="register.html"></link:html>
+    <script src="script.js"></script>
+</body>
+</html>

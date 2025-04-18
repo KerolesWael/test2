@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+<!-- الشريط الجانبي -->
+<aside class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+        <li><a href="#" onclick="showHomeContent()"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#" onclick="showAccountContent()"><i class="fa fa-user"></i> My Account</a></li>
+        <li><a href="#" onclick="showSettingsContent()"><i class="fa fa-cog"></i> Settings</a></li>
+        <li><a href="#" id="logout"><i class="fa fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+</aside>
+
+<!-- المحتوى الرئيسي -->
+<main class="main-content">
+    <h1>Welcome to the Dashboard</h1>
+    <div class="stats">
+        <div class="card">📊 Users Count <strong>1500</strong></div>
+        <div class="card">📅 New Subscriptions<strong>120</strong></div>
+        <div class="card">💬 Messages <strong>45</strong></div>
+    </div>
+    <!-- محتويات يتم إخفائها حتى الضغط -->
+    <div id="homeContent" style="display: none;">
+        <h2>Home Content</h2>
+        <p>Welcome to the home section!</p>
+    </div>
+    <div id="accountSection" style="display: none;">
+        <h2>My Account</h2>
+        <form id="accountForm">
+            <label>Full Name:</label>
+            <input type="text" id="fullName" value="User Name">
+            <label>Email:</label>
+            <input type="email" id="email" value="user@example.com">
+            <label>Password:</label>
+            <input type="password" id="password" value="123456">
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    <div id="settingsContent" style="display: none;">
+        <h2>Settings</h2>
+        <p>Here you can update your settings.</p>
+    </div>
+</main>
+</div>
+
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var togglePassword = document.getElementById("togglePassword");
+    var passwordField = document.getElementById("password");
+
+    if (togglePassword && passwordField) {
+        togglePassword.addEventListener("click", function () {
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                togglePassword.classList.remove("fa-eye");
+                togglePassword.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                togglePassword.classList.remove("fa-eye-slash");
+                togglePassword.classList.add("fa-eye");
+            }
+        });
+    }
+});
+
+function showHomeContent() {
+    document.getElementById('homeContent').style.display = 'block';
+    document.getElementById('accountSection').style.display = 'none';
+    document.getElementById('settingsContent').style.display = 'none';
+}
+
+function showAccountContent() {
+    document.getElementById('homeContent').style.display = 'none';
+    document.getElementById('accountSection').style.display = 'block';
+    document.getElementById('settingsContent').style.display = 'none';
+}
+
+function showSettingsContent() {
+    document.getElementById('homeContent').style.display = 'none';
+    document.getElementById('accountSection').style.display = 'none';
+    document.getElementById('settingsContent').style.display = 'block';
+}
+
+</script>
+</body>
+</html>
